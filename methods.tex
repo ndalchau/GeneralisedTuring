@@ -1,0 +1,27 @@
+We study RDEs given by \eqref{rde}, and take a perturbative expansion of the concentration $\mathbf{u}(x,t)$ around a spatially homogeneous equilibrium $\mathbf{u}^*$. The deviation from equilibrium is $\tilde{\mathbf{u}}(x,t)=\mathbf{u}(x,t)-\mathbf{u}^*$, and when it is small it satisfies the equation:
+\begin{equation}\label{rde2}
+\frac{\partial}{\partial t} \tilde{\mathbf{u}}=J\tilde{\mathbf{u}}+D\frac{\partial^2}{\partial x^2} \tilde{\mathbf{u}},
+\end{equation}
+where $J=\frac{\partial \mathbf{F}}{\partial \mathbf{u}}$ is the Jacobian matrix of the biochemical system evaluated at the equilibrium. 
+
+We propose an ansatz solution of the form: $\tilde{\mathbf{u}}(x,t)=\mathbf{c}e^{\lambda t}\text{cos}\left[kx\right]$. Combining this ansatz with \eqref{rde2} gives:
+\begin{equation}\label{rde3}
+\lambda \tilde{\mathbf{u}}=J\tilde{\mathbf{u}}-k^2D\tilde{\mathbf{u}},
+\end{equation}
+implying that:
+\begin{equation}
+\left( \lambda I -J+k^2D \right)\tilde{\mathbf{u}}=\mathbf{0},
+\end{equation}
+i.e. that $\lambda$ is an eigenvalue of $J-k^2D$. We denote the $N$ eigenvalues $\lambda^{(1)},...,\lambda^{(N)}$ and their corresponding normalised eigenvectors $\mathbf{v}^{(1)},...,\mathbf{v}^{(N)}$.
+
+Since the boundary conditions are reflective (zero-flux), $\tilde{\mathbf{u}}(x,t)$ must have zero $x$ derivative at $x=0$ and $x=L$: it follows from this that the only permissible $k$'s are given by $k=\frac{n\pi}{L}$ for $n=0,1,2,...$. The general solution of \eqref{rde2} will then be given by:
+\begin{equation}\label{fourier3}
+\tilde{\mathbf{u}}(x,t)=\sum_{n=0}^\infty \text{cos}\left[\frac{n\pi x}{L}\right]  \sum_{j=1}^N \left(\mathbf{c}_n\cdot \mathbf{v}_n^{(j)}\right)\mathbf{v}_n^{(j)}e^{\lambda_n^{(j)}t},
+\end{equation}
+where $\mathbf{c}_n$ are the Fourier coefficients of the initial concentration $\tilde{\mathbf{u}}(x,0)$. 
+
+After a short time has passed, each term in \eqref{fourier3} will come to be dominated by whichever $\lambda_n^{(j)}$ has the largest real part. Denoting this eigenvalue $\lambda_n$,
+\begin{equation}
+\sum_{j=1}^N \left(\mathbf{c}_n\cdot \mathbf{v}_n^{(j)}\right)\mathbf{v}_n^{(j)}e^{\lambda_n^{(j)}t}\approx \mathbf{a}_ne^{\lambda_n t},
+\end{equation}
+for some vector $\mathbf{a}_n$. It follows that \eqref{fourier2} describes the initial dynamics, and the real part of $\lambda_n$ is given by \eqref{disp}.
